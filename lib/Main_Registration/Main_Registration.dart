@@ -16,6 +16,7 @@ class _Main_Registration_PageState extends State<Main_Registration_Page> {
   TextEditingController catagorycontroller = TextEditingController();
   TextEditingController namecontroller = TextEditingController();
   TextEditingController addresscontroller = TextEditingController();
+  TextEditingController latilongicontroller = TextEditingController();
   TextEditingController phonecontroller = TextEditingController();
   TextEditingController mobilecontroller = TextEditingController();
   TextEditingController watsapcontroller = TextEditingController();
@@ -31,6 +32,7 @@ class _Main_Registration_PageState extends State<Main_Registration_Page> {
     catagorycontroller=TextEditingController();
     namecontroller = TextEditingController();
     addresscontroller = TextEditingController();
+    latilongicontroller = TextEditingController();
     phonecontroller = TextEditingController();
     mobilecontroller = TextEditingController();
     watsapcontroller = TextEditingController();
@@ -56,6 +58,7 @@ class _Main_Registration_PageState extends State<Main_Registration_Page> {
     request.fields['catagory'] = catagorycontroller.text;
     request.fields['name'] = namecontroller.text;
     request.fields['address'] = addresscontroller.text;
+    request.fields['latilongi'] = latilongicontroller.text;
     request.fields['phone'] = phonecontroller.text;
     request.fields['mobile'] = mobilecontroller.text;
     request.fields['watsap'] = watsapcontroller.text;
@@ -109,12 +112,13 @@ class _Main_Registration_PageState extends State<Main_Registration_Page> {
               color: Colors.red.shade900,
               onPressed: () async {
                 var res = await uploadImage(_imageFile.path, uploadUrl);
-               // Text("please wait");
+                // Text("please wait");
 
-              //  print(res);
+                //  print(res);
                 catagorycontroller.clear();
                 namecontroller.clear();
                 addresscontroller.clear();
+                latilongicontroller.clear();
                 phonecontroller.clear();
                 mobilecontroller.clear();
                 watsapcontroller.clear();
@@ -159,15 +163,15 @@ class _Main_Registration_PageState extends State<Main_Registration_Page> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children:[
-             Text(
-            'Pick an Image ',  style: GoogleFonts.prompt(color: Colors.red.shade900,fontSize: 20),
-          ),
-          IconButton(onPressed: (){
-            _pickImage();
-          }, icon: Icon(Icons.photo_library,color: Colors.red.shade900,size: 35,)),
+            Text(
+              'Pick an Image ',  style: GoogleFonts.prompt(color: Colors.red.shade900,fontSize: 20),
+            ),
+            IconButton(onPressed: (){
+              _pickImage();
+            }, icon: Icon(Icons.photo_library,color: Colors.red.shade900,size: 35,)),
 
 
-        ],
+          ],
         ),
       );
     }
@@ -256,6 +260,23 @@ class _Main_Registration_PageState extends State<Main_Registration_Page> {
                   ),
                   keyboardType: TextInputType.multiline,
                   maxLines: 3,
+                ),
+              ),
+            ),
+            SizedBox(height: 20,),
+
+            Container(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                child: TextField(
+                  controller: latilongicontroller,
+                  decoration: new InputDecoration(
+                    border: new OutlineInputBorder(
+                        borderSide: new BorderSide(color: Colors.teal)),
+                    labelText: 'Enter Latitude and Longitude',
+                  ),
+                  keyboardType: TextInputType.multiline,
+                  // maxLines: 3,
                 ),
               ),
             ),

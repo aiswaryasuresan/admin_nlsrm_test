@@ -133,7 +133,7 @@ class Service_Detail extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10)),
                             child: Center(
                                 child: GestureDetector(
-                                  onTap: () async => !await launch('sms:' + passing_data.phone),
+                                  onTap: () async => !await launch('tel:' + passing_data.phone),
                                   child: Text(
                                     passing_data.phone,
                                     style: GoogleFonts.inter(
@@ -162,7 +162,7 @@ class Service_Detail extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10)),
                             child: Center(
                                 child: GestureDetector(
-                                  onTap: () async => !await launch('sms:' + passing_data.mobile),
+                                  onTap: () async => !await launch('tel:' + passing_data.mobile),
                                   child: Text(
                                     passing_data.mobile,
                                     style: GoogleFonts.inter(
@@ -406,7 +406,7 @@ class Service_Detail extends StatelessWidget {
                               fontSize: 15,
                               fontWeight: FontWeight.bold)),
                       onPressed: () => MapsLauncher.launchQuery(
-                          passing_data.name + passing_data.address),
+                          passing_data.latilongi),
 
                       child: Text("View Direction",style: GoogleFonts.inter(fontSize: 15),),
 

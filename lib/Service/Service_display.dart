@@ -161,11 +161,13 @@ List<Note> userModelFromJson(String str) => List<Note>.from(json.decode(str).map
 String userModelToJson(List<Note> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class Note {
+
   Note({
     required this.name,
     required this.image,
     required this.catagory,
     required this.address,
+    required this.latilongi,
     required this.blood,
     required this.phone,
     required this.email,
@@ -182,6 +184,7 @@ class Note {
   String image;
   String catagory;
   String address;
+  String latilongi;
   String blood;
   String phone;
   String email;
@@ -197,6 +200,7 @@ class Note {
     image: json["image"],
     catagory: json["catagory"],
     address: json["address"],
+    latilongi: json["latilongi"],
     blood: json["blood"],
     phone: json["phone"],
     email: json["email"],

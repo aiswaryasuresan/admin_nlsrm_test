@@ -19,7 +19,7 @@ class _New_SearchbarState extends State<New_Searchbar> {
 
 
   List<Note> _notes = [];
-  List<Note> _notesForDisplay =[];
+  List<Note> _notesForDisplay = [];
   Future <List<Note>> fetchNotes() async{
     var url ="https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Main_Search_Box_Display.php";
     var response = await http.get(Uri.parse(url));

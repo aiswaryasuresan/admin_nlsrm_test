@@ -156,6 +156,7 @@ class Note {
   Note({
     required this.name,
     required this.address,
+    required this.latilongi,
     required this.phone,
     required this.mobile,
     required this.website,
@@ -166,6 +167,7 @@ class Note {
 
   final String name;
   final String address;
+  final String latilongi;
   final String phone;
   final String mobile;
   final String website;
@@ -176,6 +178,7 @@ class Note {
         name: json["name"],
         image: json["image"],
         address: json["address"],
+        latilongi: json["latilongi"],
         phone: json["phone"],
         mobile: json["mobile"],
         website: json["website"],
@@ -186,6 +189,7 @@ class Note {
         "name": name,
         "image": image,
         "address": address,
+    "latilongi": latilongi,
         "phone": phone,
         "mobile": mobile,
         "website": website,

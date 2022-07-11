@@ -132,7 +132,7 @@ class Vie_More_Detail extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10)),
                             child: Center(
                                 child: GestureDetector(
-                                  onTap: () async => !await launch('sms:' + passing_data.phone),
+                                  onTap: () async => !await launch('tel:' + passing_data.phone),
                                   child: Text(
                                     passing_data.phone,
                                     style: GoogleFonts.inter(
@@ -161,7 +161,7 @@ class Vie_More_Detail extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10)),
                             child: Center(
                                 child: GestureDetector(
-                                  onTap: () async => !await launch('sms:' + passing_data.mobile),
+                                  onTap: () async => !await launch('tel:' + passing_data.mobile),
                                   child: Text(
                                     passing_data.mobile,
                                     style: GoogleFonts.inter(
@@ -303,83 +303,32 @@ class Vie_More_Detail extends StatelessWidget {
                   ),
 
                   SizedBox(height: 20,),
-                  // Row(
-                  //   children: [
-                  //     // SizedBox(
-                  //     //   width: MediaQuery.of(context).size.width / 20,
-                  //     // ),
-                  //     // Container(
-                  //     //     height: 35,
-                  //     //     width: 35,
-                  //     //     child: Icon(
-                  //     //       Icons.format_list_bulleted,
-                  //     //       size: 20,
-                  //     //     ),
-                  //     //     decoration: BoxDecoration(
-                  //     //         color: Colors.grey.shade300,
-                  //     //         borderRadius: BorderRadius.circular(10))),
-                  //     // SizedBox(
-                  //     //   width: 20,
-                  //     // ),
-                  //     Column(
-                  //       crossAxisAlignment: CrossAxisAlignment.start,
-                  //       children: [
-                  //         Text(
-                  //           "Other Products",
-                  //           style: GoogleFonts.inter(
-                  //               fontSize: 13,
-                  //               fontWeight: FontWeight.bold,
-                  //               color: Colors.grey.shade600),
-                  //         ),
-                  //         SizedBox(
-                  //           height: 5,
-                  //         ),
-                  //         Container(
-                  //           // height: 150,
-                  //           // width: 300,
-                  //           height:MediaQuery.of(context).size.height/6,
-                  //           width:MediaQuery.of(context).size.width/1.2,
-                  //           decoration: BoxDecoration(
-                  //               color: Colors.pink.shade50,
-                  //               borderRadius: BorderRadius.circular(10)),
-                  //           child: Center(
-                  //               child: Text(
-                  //                 passing_data.other_pro,
-                  //                 style: GoogleFonts.inter(
-                  //                     fontSize: 12,
-                  //                     fontWeight: FontWeight.bold,
-                  //                     color: Colors.pink.shade300),
-                  //               )),
-                  //         ),
-                  //       ],
-                  //     ),
-                  //   ],
-                  // ),
-              Text(
-                          "Other Products",
-                          style: GoogleFonts.inter(
-                              fontSize: 13,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.grey.shade600),
-                        ),
+
+                  Text(
+                    "Other Products",
+                    style: GoogleFonts.inter(
+                        fontSize: 13,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey.shade600),
+                  ),
                   SizedBox(height: 10,),
                   Container(
-                   padding: EdgeInsets.all(10),
+                    padding: EdgeInsets.all(10),
                     height:MediaQuery.of(context).size.height/4,
                     width:MediaQuery.of(context).size.width/1.2,
                     decoration: BoxDecoration(
-                                    color: Colors.pink.shade50,
-                                    borderRadius: BorderRadius.circular(10)),
-                                child: Center(
-                                    child: Text(
-                                      passing_data.other_pro,
-                                      style: GoogleFonts.inter(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.pink.shade300),
-                                    )),
-                              ),
-                  
+                        color: Colors.pink.shade50,
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Center(
+                        child: Text(
+                          passing_data.other_pro,
+                          style: GoogleFonts.inter(
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.pink.shade300),
+                        )),
+                  ),
+
 
 
                   SizedBox(height: 30,),
@@ -407,7 +356,7 @@ class Vie_More_Detail extends StatelessWidget {
                               fontSize: 15,
                               fontWeight: FontWeight.bold)),
                       onPressed: () => MapsLauncher.launchQuery(
-                          passing_data.name + passing_data.address),
+                          passing_data.latilongi),
 
                       child: Text("View Direction",style: GoogleFonts.inter(fontSize: 15),),
 
@@ -477,243 +426,6 @@ class Vie_More_Detail extends StatelessWidget {
           ],
         ),
       ),
-
-
-
-
-
-
-
-      // body: SingleChildScrollView(
-      //     padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
-      //     child: Column(
-      //       children: [
-      //         Container(
-      //           height: MediaQuery.of(context).size.height / 3,
-      //           width: MediaQuery.of(context).size.width / 0.5,
-      //           decoration: BoxDecoration(
-      //             border: Border.all(color: Colors.red.shade900),
-      //             borderRadius: BorderRadius.circular(15),
-      //             image: DecorationImage(
-      //               image: NetworkImage(passing_data.image),
-      //               fit: BoxFit.fill,
-      //             ),
-      //           ),
-      //         ),
-      //         SizedBox(height: 20,),
-      //         Text(
-      //           passing_data.address,
-      //           overflow: TextOverflow.ellipsis,
-      //           maxLines: 6,
-      //           style: GoogleFonts.prompt(
-      //               color: Colors.deepOrange.shade400, fontSize: 15),
-      //         ),
-      //         SizedBox(height: 15,),
-      //                       Row(
-      //                         children: [
-      //                           GestureDetector(
-      //                             onTap: () async => !await launch('sms:' + passing_data.phone),
-      //                             child: Image.asset(
-      //                               "assets/tele.png",
-      //                               height: 30,
-      //                               width: 20,
-      //                             ),
-      //                           ),
-      //                           SizedBox(
-      //                             width: 20,
-      //                           ),
-      //                           GestureDetector(
-      //                               onTap: () async => !await launch('sms:' + passing_data.phone),
-      //                               child: Text(
-      //                                   passing_data.phone)),
-      //                         ],
-      //                       ),
-      //   Row(
-      //                     children: [
-      //                       GestureDetector(
-      //                        // onTap: _launchPhone,
-      //                         child: Image.asset(
-      //                           "assets/mobile.png",
-      //                           height: 30,
-      //                           width: 20,
-      //                         ),
-      //                       ),
-      //                       SizedBox(
-      //                         width: 20,
-      //                       ),
-      //                       GestureDetector(
-      //                           onTap: () async => !await launch('sms:' + passing_data.mobile),
-      //                           child: Text(
-      //                               passing_data.mobile)),
-      //                     ],
-      //                   ),
-      //                   Row(
-      //                     children: [
-      //                       Image.asset(
-      //                         "assets/internet.png",
-      //                         height: 20,
-      //                         width: 18,
-      //                       ),
-      //                       SizedBox(
-      //                         width: 20,
-      //                       ),
-      //                       Text(
-      //                         passing_data.website,
-      //                         style: GoogleFonts.prompt(
-      //                           fontSize: 15,
-      //                         ),
-      //                       ),
-      //                     ],
-      //                   ),
-      //                   Row(
-      //                     children: [
-      //                       Image.asset(
-      //                         "assets/email.png",
-      //                         height: 20,
-      //                         width: 18,
-      //                       ),
-      //                       SizedBox(
-      //                         width: 20,
-      //                       ),
-      //                       GestureDetector(
-      //                         onTap: ()async {
-      //                           var result = await OpenMailApp.openMailApp();
-      //                           if (!result.didOpen && !result.canOpen) {
-      //                             showNoMailAppsDialog(context);
-      //                           } else if (!result.didOpen && result.canOpen) {
-      //                             showDialog(
-      //                               context: context,
-      //                               builder: (_) {
-      //                                 return MailAppPickerDialog(
-      //                                   mailApps: result.options,
-      //                                 );
-      //                               },
-      //                             );
-      //                           }
-      //                         },
-      //
-      //
-      //                         child: Text(
-      //                           passing_data.email,
-      //                           style: GoogleFonts.prompt(
-      //                             fontSize: 15,
-      //                           ),
-      //                         ),
-      //                       ),
-      //                     ],
-      //                   ),
-      //                   Row(
-      //                     children: [
-      //                       Image.asset(
-      //                         "assets/blood.png",
-      //                         height: 30,
-      //                         width: 20,
-      //                       ),
-      //                       SizedBox(
-      //                         width: 20,
-      //                       ),
-      //                       Text("Blood Group:",
-      //                         style: GoogleFonts.prompt(),),
-      //                       SizedBox(width: 5,),
-      //                       Text(passing_data.blood,
-      //                         style: GoogleFonts.prompt(
-      //                             color: Colors.red.shade900),),
-      //                     ],
-      //                   ),
-      //                   SizedBox(
-      //                     height: 5,
-      //                   ),
-      //                   Row(
-      //                     mainAxisAlignment:
-      //                     MainAxisAlignment.spaceAround,
-      //                     children: [
-      //                       Column(
-      //                         children: [
-      //                           GestureDetector(
-      //                             onTap: () async => await launch(
-      //                                 "https://wa.me/${passing_data.watsap}?text=Hello"),
-      //                             child: Image.asset(
-      //                               "assets/watsap.png",
-      //                               height: 50,
-      //                               width: 30,
-      //                             ),
-      //                           ),
-      //                         ],
-      //                       ),
-      //                       Column(children: [
-      //                         GestureDetector(
-      //                           onTap: () async => !await launch(passing_data.facebook),
-      //                           //_launchfacebook,
-      //                           child: Image.asset(
-      //                             "assets/facebook.png",
-      //                             height: 50,
-      //                             width: 30,
-      //                           ),
-      //                         ),
-      //                       ]),
-      //                       Column(children: [
-      //                         GestureDetector(
-      //                           onTap: () async => !await launch(passing_data.insta),
-      //                           child: Image.asset(
-      //                             "assets/instagram.png",
-      //                             height: 50,
-      //                             width: 30,
-      //                           ),
-      //                         ),
-      //                       ]),
-      //                     ],
-      //                   ),
-      //                   SizedBox(
-      //                     height: 10,
-      //                   ),
-      //                   Container(
-      //                     alignment: Alignment.center,
-      //                     height: 70,
-      //                     width: 300,
-      //                     decoration: BoxDecoration(
-      //                       borderRadius: BorderRadius.circular(
-      //                           10),   color: Colors.grey.shade300,),
-      //                     child: SingleChildScrollView(
-      //                       child: Column(
-      //                         children: [
-      //                           Text("Other Products:",
-      //                             style: TextStyle(
-      //                                 fontSize: 17),),
-      //                           Text(
-      //                             passing_data.other_pro,
-      //                             style: TextStyle(
-      //                                 color: Colors.teal.shade400,
-      //                                 fontSize: 13),
-      //                           ),
-      //                         ],
-      //                       ),
-      //                     ),
-      //                   ),
-      //                   SizedBox(height: 10,),
-      //                   ElevatedButton(
-      //                       style: ElevatedButton.styleFrom(
-      //                           primary: Colors.red.shade900,
-      //                           padding: EdgeInsets.symmetric(horizontal: 30, vertical: 7),
-      //                           textStyle: TextStyle(
-      //                               fontSize: 15,
-      //                               fontWeight: FontWeight.bold)),
-      //                       onPressed: () => MapsLauncher.launchQuery(
-      //                           passing_data.name + passing_data.address),
-      //                       child: Row(
-      //                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //                         children: [
-      //                           Text('Location'),
-      //                           Icon(Icons.location_on_rounded),
-      //                         ],
-      //                       )
-      //
-      //
-      //                   ),
-      //                 ],
-      //               ),
-      //             ),
-
-
 
     );
   }

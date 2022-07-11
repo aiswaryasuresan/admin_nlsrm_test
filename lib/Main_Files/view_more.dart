@@ -7,9 +7,7 @@ import 'package:http/http.dart' as http;
 import '../Admin_Display Catagory/View_More_Detail.dart';
 
 
-
 class View_More extends StatefulWidget {
-  const View_More({Key? key}) : super(key: key);
 
   @override
   _View_MoreState createState() => _View_MoreState();

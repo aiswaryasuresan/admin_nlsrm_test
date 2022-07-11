@@ -58,7 +58,7 @@ class Admin_CatagoryimageButtonState extends State<Admin_CatagoryimageButton> {
                 children: [
                   GestureDetector(
                     onTap: (){
-                      Navigator.push(context,MaterialPageRoute(builder: (context)=>Display_Restaurant_data()));
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=>Display_Restaurant_Data()));
 
                     },
                     child: new Image.asset(
@@ -68,7 +68,7 @@ class Admin_CatagoryimageButtonState extends State<Admin_CatagoryimageButton> {
                     ),
                   ),
                   TextButton(onPressed: () {
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Display_Restaurant_data()));
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Display_Restaurant_Data()));
                    // Navigator.push(context,MaterialPageRoute(builder: (context)=>Hotel_Sub_Display()));
                   }, child: Text("Restaurant",style:GoogleFonts.quicksand(color: Colors.blueGrey.shade900,fontWeight: FontWeight.bold),))
                   // new Text(
@@ -83,7 +83,7 @@ class Admin_CatagoryimageButtonState extends State<Admin_CatagoryimageButton> {
                 children: [
                   GestureDetector(
                     onTap:(){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Grocery_Display()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Display_Grocery_Data()));
                     } ,
                     child: new Image.asset(
                       'assets/grow1.png',
@@ -92,7 +92,7 @@ class Admin_CatagoryimageButtonState extends State<Admin_CatagoryimageButton> {
                     ),
                   ),
                   TextButton(onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Grocery_Display()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Display_Grocery_Data()));
                   }, child: Text("Grocery",style:GoogleFonts.quicksand(color: Colors.blueGrey.shade900,fontWeight: FontWeight.bold),))
                 ],
               ),

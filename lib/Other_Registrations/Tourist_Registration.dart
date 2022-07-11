@@ -16,6 +16,7 @@ class _Tourist_RegState extends State<Tourist_Reg> {
 
   TextEditingController namecontroller = TextEditingController();
   TextEditingController addresscontroller = TextEditingController();
+  TextEditingController latilongicontroller = TextEditingController();
   TextEditingController phonecontroller = TextEditingController();
   TextEditingController mobilecontroller = TextEditingController();
   TextEditingController websitecontroller = TextEditingController();
@@ -26,6 +27,7 @@ class _Tourist_RegState extends State<Tourist_Reg> {
 
     namecontroller = TextEditingController();
     addresscontroller = TextEditingController();
+    latilongicontroller = TextEditingController();
     phonecontroller = TextEditingController();
     mobilecontroller = TextEditingController();
     websitecontroller= TextEditingController();
@@ -45,6 +47,7 @@ class _Tourist_RegState extends State<Tourist_Reg> {
     request.files.add(await http.MultipartFile.fromPath('image', filepath));
     request.fields['name'] = namecontroller.text;
     request.fields['address'] = addresscontroller.text;
+    request.fields['latilongi'] = addresscontroller.text;
     request.fields['phone'] = phonecontroller.text;
     request.fields['mobile'] = mobilecontroller.text;
     request.fields['website'] = websitecontroller.text;
@@ -97,6 +100,7 @@ class _Tourist_RegState extends State<Tourist_Reg> {
 
                 namecontroller.clear();
                 addresscontroller.clear();
+                latilongicontroller.clear();
                 phonecontroller.clear();
                 mobilecontroller.clear();
                 websitecontroller.clear();
@@ -218,6 +222,23 @@ class _Tourist_RegState extends State<Tourist_Reg> {
                     border: new OutlineInputBorder(
                         borderSide: new BorderSide(color: Colors.teal)),
                     labelText: 'Enter Address',
+                  ),
+                  keyboardType: TextInputType.multiline,
+                  maxLines: 3,
+                ),
+              ),
+            ),
+            SizedBox(height: 20,),
+
+            Container(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                child: TextField(
+                  controller: latilongicontroller,
+                  decoration: new InputDecoration(
+                    border: new OutlineInputBorder(
+                        borderSide: new BorderSide(color: Colors.teal)),
+                    labelText: 'Enter Latitude and Longitude',
                   ),
                   keyboardType: TextInputType.multiline,
                   maxLines: 3,

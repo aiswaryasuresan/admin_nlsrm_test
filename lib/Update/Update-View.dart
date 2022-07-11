@@ -4,17 +4,17 @@ import 'package:http/http.dart' as http;
 import '../Main_Files/Admin_HomPage.dart';
 
 
-class Textile_Update extends StatefulWidget {
+class View_Update extends StatefulWidget {
   final List list;
   final int index;
 
-  Textile_Update({required this.list, required this.index});
+  View_Update({required this.list, required this.index});
 
   @override
-  _Textile_UpdateState createState() => new _Textile_UpdateState();
+  _View_UpdateState createState() => new _View_UpdateState();
 }
 
-class _Textile_UpdateState extends State<Textile_Update> {
+class _View_UpdateState extends State<View_Update> {
 
   TextEditingController controllername = TextEditingController();
   TextEditingController controllercatagory = TextEditingController();
@@ -31,7 +31,7 @@ class _Textile_UpdateState extends State<Textile_Update> {
   TextEditingController controllerimage = TextEditingController();
 
   void UpdateData() {
-    var url ="https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Update/Textile_Update.php";
+    var url ="https://jcizone19.in/._A_nileswaram/directoryapp/Nileswaram.com/Update/View_Update.php";
 
     http.post(Uri.parse(url),
         body: {
@@ -69,7 +69,7 @@ class _Textile_UpdateState extends State<Textile_Update> {
     controlleremail= new TextEditingController(text: widget.list[widget.index]['email'] );
     controllerwatsap= new TextEditingController(text: widget.list[widget.index]['watsap'] );
     controllerother_pro= new TextEditingController(text: widget.list[widget.index]['other_pro'] );
-     controllerimage= new TextEditingController(text: widget.list[widget.index]['image'] );
+    controllerimage= new TextEditingController(text: widget.list[widget.index]['image'] );
 
 
     super.initState();
